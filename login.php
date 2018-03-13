@@ -29,3 +29,4 @@ header("Location: zaloguj.php");
 
 
 TEST Z LAPTOPA
+TEST ZE STACJONARKI
