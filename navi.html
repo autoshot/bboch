@@ -1,0 +1,40 @@
+
+       <ul>
+        <li><a href="index.php">Strona Główna</a></li>
+        <li><a href="spotify.php">Spotify</a></li>
+        <li><a href="autobus.php">Wesoły Autobus</a></li>
+<?php
+           session_start();
+if (isset($_COOKIE['login']))
+        {
+            $login = $_COOKIE['login'];
+            $login = "<font color=red>$login</font>";
+} else {
+    $login = "";
+}
+echo <<< END
+           <script>
+function showMore(){
+    document.getElementById("log").innerHTML = "<a onmouseout='showLess()' href='logout.php'>WYLOGUJ</a>";
+}
+    function showLess(){
+    document.getElementById("log").innerHTML = "<a onmouseover='showMore()'>Witaj $login!</a>";
+}
+</script>
+END;
+        if (isset($_COOKIE['login']))
+        {
+            $login = $_COOKIE['login'];
+            $login = "<font color=red>$login</font>";
+            print("<li id='log' style='float:right''><a onmouseover='showMore()'>Witaj $login!</a></li>");
+        } else {
+            if(isset($_SESSION['logout'])) {
+                $msg = $_SESSION['logout'];
+                unset($_SESSION['logout']);
+                echo ("<li style='float:right'><a href='zaloguj.php'>Zaloguj</a></li>");
+                echo ("<li style='float:right'><a>$msg</a></li>");
+            } else
+            print("<li style='float:right'><a href='zaloguj.php'>Zaloguj</a></li>");
+        }
+        ?>
+</ul>
