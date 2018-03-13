@@ -18,23 +18,10 @@
     min-height: 1020px;
     padding: 30px;
 }
-
-#left {
-    float:left;
-    width: 70%;
-}
-
-#menu {
-    float:right;
-    width: 30%;
-    border-left: 1px solid black;
-}
-
 #container {
     width: 75%;
     margin: auto;
     margin-top: 40px;
-    min-height: 500px;
     background-color: cornsilk;
     border: 2px solid black;
     border-radius: 15px;
@@ -44,6 +31,20 @@
   content:'';
   display:block;
   clear:both;
+}
+#left {
+    float:left;
+    width: 70%;
+}
+
+#menu {
+    float:left;
+    width: 29.9%;
+    border-left: 1px solid black;
+    height: 100%;
+}
+#clear {
+    clear: both;
 }
 
 img {

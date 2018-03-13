@@ -19,24 +19,23 @@
         <div id="container">
             <div id="left">
 
-<?php
+                <?php
 if(isset($_GET['id'])){
 require_once("connect.php");
 $conn = new mysqli($host,$db_user,$db_pass,$db_name);
 $id = $_GET['id'];
-$wynik = $conn -> query("select * from users where id=$id");
+$wynik = $conn -> query("select * from spotify where id=$id");
 $wynik = $wynik -> fetch_assoc();
 $imie = $wynik['imie'];
 $nazwisko = $wynik['nazwisko'];
 $rok = $wynik['prok'];
 $msc = $wynik['pmiesiac'];
 $ost = $wynik['ostatnia'];
+$data = $wynik['data'];
 }
 ?>
 
-                TEST
-
-
+            <br><br><br><br><center>Wybierz subskrybenta z listy po prawej</center>
 
             </div>
             <div id="menu">

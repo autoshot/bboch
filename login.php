@@ -4,8 +4,8 @@ $login = $_POST['login'];
 $pass = $_POST['password'];
 
 $conn = new mysqli($host,$db_user,$db_pass,$db_name);
-$wynik = $conn -> query("SELECT * from admin WHERE login='$login' AND password='$pass'");
-$wynik = $wynik -> fetch_assoc())
+$wynik = $conn -> query("SELECT * from users WHERE login='$login' AND password='$pass'");
+$wynik = $wynik -> fetch_assoc();
 if($wynik['id']!=0)
 {
         $id = $wynik['id'];
